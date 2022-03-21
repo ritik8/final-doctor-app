@@ -125,7 +125,7 @@ const Index = ({ show, doctor }) => {
           </div>
 
           {/* ////////////////// Council Fee goes to here /////////////////// */}
-          <div className="mt-5" style={{marginBottom: "20px"}}>
+          <div className="mt-5" >
             <h6 className="mb-0">Councilling Fee</h6>
             <p>100 rs.</p>
           </div>
