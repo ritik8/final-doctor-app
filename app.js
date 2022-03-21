@@ -34,9 +34,9 @@ app.use('/api/v1/client', clientRoute)
 
 
 
-app.get('/', (req, res) => {
-    res.send("Hello I am node.js application")
-})
+// app.get('/', (req, res) => {
+//     res.send("Hello I am node.js application")
+// })
 
 if(process.env.MODE_ENV=="production"){
     app.use(express.static('client/build'));
