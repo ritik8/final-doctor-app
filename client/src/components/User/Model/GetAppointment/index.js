@@ -263,7 +263,7 @@ const GetAppointment = ({ hidemodal, doctor }) => {
                     </div>
                   </div>
 
-                  <div className="col-12 text-center">
+                  <div className="col-12 text-center" style={{marginBottom: "20px"}}>
                     <button
                       type="submit"
                       className="btn shadow-none"
