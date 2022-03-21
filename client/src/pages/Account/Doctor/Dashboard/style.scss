@@ -1,0 +1,20 @@
+@import "../../../../App.scss";
+
+.dashboard {
+  height: 540px;
+
+  @media (max-width: 1024px) {
+    height: 1180px;
+  }
+  @media (max-width: 776px) {
+    height: 830px;
+  }
+  .card {
+    border-radius: 8px;
+    box-shadow: 0 0.115rem 1.25rem rgba(0, 0, 0, 0.15) !important;
+  }
+  .card-body {
+    background: #fec200;
+    border-radius: 4px;
+  }
+}

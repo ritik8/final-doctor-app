@@ -1,0 +1,121 @@
+@import "../../../App.scss";
+
+.side-menu {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #36454f;
+
+  // Header
+  .header {
+    padding: 15px;
+    padding-left: 20px;
+    border-bottom: 1px solid #dfdfdf7a;
+
+    .img-box {
+      width: 38px;
+      height: 38px;
+      overflow: hidden;
+
+      img {
+        min-width: 100%;
+        min-height: 100%;
+      }
+    }
+
+    .content {
+      padding-top: 5px;
+      padding-left: 10px;
+
+      p {
+        color: #000;
+        font-size: 14px;
+        margin-bottom: 0;
+        font-weight: 700;
+        line-height: 10px;
+        text-transform: capitalize;
+        font-family: "Roboto", sans-serif;
+      }
+
+      small {
+        color: #555;
+        font-size: 11px;
+        font-family: "Roboto", sans-serif;
+      }
+    }
+
+    .btn {
+      margin-top: 5px;
+      padding: 4px 6px;
+    }
+  }
+
+  // Body
+  .body {
+    padding: 30px;
+
+    @media (max-width: 1024px) {
+      padding-top: 200px;
+    }
+    @media (max-width: 776px) {
+      padding-top: 100px;
+    }
+
+    a {
+      display: block;
+      color: #000;
+      background: #fec200;
+      font-size: 24px;
+      font-weight: 700;
+      display: block;
+      padding: 12px 20px;
+      transition: 0.4s all;
+      text-decoration: none;
+      text-transform: capitalize;
+      font-family: "Roboto", sans-serif;
+      border-radius: 4px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+
+      @media (max-width: 1024px) {
+        margin-top: 100px;
+        margin-bottom: 100px;
+      }
+      @media (max-width: 776px) {
+        margin-top: 70px;
+        margin-bottom: 70px;
+      }
+    }
+
+    .btn {
+      margin-top: 0;
+      text-align: left;
+      border-radius: 5px;
+      margin-left: 10%;
+      margin-right: 10%;
+      padding: 12px 9px;
+      transition: 0.4s all;
+      background: #fec200;
+      width: 80%;
+
+      span {
+        font-size: 18px;
+        font-weight: 500;
+        margin-left: 8px;
+        text-transform: capitalize;
+        font-family: "Roboto", sans-serif;
+      }
+    }
+
+    .is-Active {
+      color: #fff;
+      background: #fec200;
+    }
+  }
+
+  @media (min-width: 992px) {
+    border-radius: 8px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  }
+}

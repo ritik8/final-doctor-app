@@ -1,0 +1,54 @@
+@import "../../../../App.scss";
+
+.appointments {
+  height: 540px;
+  border-radius: 4px;
+
+  @media (max-width: 1024px) {
+    height: 1180px;
+  }
+  @media (max-width: 776px) {
+    height: 840px;
+  }
+
+  .card-body {
+    padding: 5rem 1rem;
+  }
+
+  .table {
+    thead {
+      tr {
+        td {
+          color: #000;
+          font-size: 13px;
+          font-weight: 500;
+          border-bottom: 1px solid #dfdfdf;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          color: #000;
+          font-size: 13px;
+          font-weight: 300;
+          border-bottom: 1px solid #dfdfdf;
+
+          p {
+            padding-top: 4px;
+            margin-bottom: 0;
+          }
+
+          .btn {
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 4px 10px;
+            text-transform: capitalize;
+            background: $primary-color;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,116 @@
+@import "../../../../App.scss";
+
+.index {
+  height: 540px;
+  border-radius: 4px;
+
+  @media (max-width: 776px) {
+    height: 830px;
+  }
+  @media (max-width: 1024px) {
+    height: 1180px;
+  }
+
+  .card {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    background: #fec200;
+
+    @media (max-width: 1024px) {
+      margin-top: 100px;
+    }
+    @media (max-width: 776px) {
+      margin-top: 50px;
+    }
+
+    .card-body {
+      padding: 16px;
+
+      @media (max-width: 1024px) {
+        padding: 32px;
+      }
+      @media (max-width: 776px) {
+        padding: 16px;
+      }
+    }
+  }
+  h5 {
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+
+    @media (max-width: 1024px) {
+      font-size: 32px;
+    }
+    @media (max-width: 776px) {
+      font-size: 18px;
+    }
+  }
+
+  .form-control {
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+
+    option {
+      font-size: 14px;
+      font-weight: 600;
+      font-family: "Roboto", sans-serif;
+    }
+  }
+
+  .form-control:focus {
+    border: 1px solid #dfdfdf;
+  }
+
+  .appointment {
+    padding: 10px;
+    background: #dfdfdf2d;
+    border-bottom: 1px solid #dfdfdf;
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
+    border-radius: 4px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background: #fec200;
+    padding-left: 30%;
+    padding-right: 30%;
+
+    @media (max-width: 776px) {
+      padding-left: 15%;
+      padding-right: 15%;
+    }
+
+    p {
+      color: #000;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 0;
+      line-height: 12px;
+      text-transform: capitalize;
+      font-family: "Roboto", sans-serif;
+    }
+
+    small {
+      color: #555;
+      font-size: 12px;
+      text-transform: capitalize;
+      font-family: "Roboto", sans-serif;
+    }
+
+    .btn {
+      color: #000;
+      font-size: 18px;
+      font-weight: 500;
+      background: $primary-color;
+      text-transform: capitalize;
+      font-family: "Roboto", sans-serif;
+      background: #fff;
+      margin-left: 256px;
+    }
+  }
+}

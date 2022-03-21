@@ -1,0 +1,43 @@
+.login-links {
+  display: block;
+  margin-left: 75px;
+  margin-right: 75px;
+}
+
+.login-links button {
+  margin-left: 24px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 767px) {
+  .login-links {
+    display: block;
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+}
+
+@media (max-width: 376px) {
+  .login-links {
+    display: block;
+    margin-left: 65px;
+    margin-right: 65px;
+  }
+}
+
+@media (max-width: 361px) {
+  .login-links {
+    display: block;
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+}
+
+@media (max-width: 281px) {
+  .login-links {
+    display: block;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
