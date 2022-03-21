@@ -9,7 +9,7 @@ import doctorImage from "../../../../assets/static/doctor.jpg";
 
 const Index = ({ show, doctor }) => {
   const token = localStorage.getItem("token");
-  const url = "http://localhost:4000/uploads/doctor/profiles/";
+  const url = " https://doctor-patient-webapp.herokuapp.com/uploads/doctor/profiles/";
   const [isAuth, setAuth] = useState({ message: null, status: false });
   const [showAppointment, setShowAppointment] = useState({
     status: false,

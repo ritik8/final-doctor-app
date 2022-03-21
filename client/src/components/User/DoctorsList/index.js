@@ -3,7 +3,7 @@ import "./style.scss";
 import DoctorShowComponent from "../Model/DoctorShow/index";
 
 const Index = ({ doctors }) => {
-  const url = "http://localhost:4000/uploads/doctor/profiles/";
+  const url = " https://doctor-patient-webapp.herokuapp.com/uploads/doctor/profiles/";
   const [show, setShow] = useState(false);
   const [doctor, setDoctor] = useState();
 
