@@ -1,0 +1,104 @@
+.reviews {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-bottom: 30px;
+    align-items: center;
+  }
+  .section-title-home {
+    font-family: var(--jen-font-title);
+    color: #fff;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 44px;
+    margin-bottom: 72px;
+  }
+  .avator-img {
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding-top: 8px;
+  }
+  .block- {
+    display: flex;
+    width: 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+    margin-right: 8%;
+  }
+  .block- .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 210px;
+    background: #fec200;
+    padding: 12px;
+    border-radius: 4px;
+  }
+  .block- .content p {
+    font-family: var(--jen-font-sans-serif);
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 28px;
+  }
+  .block- h3 {
+    font-family: var(--jen-font-sans-serif);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 24px;
+  }
+  .section-para {
+    font-family: var(--jen-font-sans-serif);
+    font-weight: 400;
+    font-size: 17px;
+    color: var(--black-russian);
+    line-height: 28px;
+    margin-bottom: 0 !important;
+  }
+  
+  @media (max-width: 1024px) {
+    .section-title-home {
+      font-size: 28px;
+    }
+    .reviews {
+      margin-left: 40px;
+    }
+    .block- .content {
+      height: 290px;
+    }
+    .block- .content p {
+      line-height: 24px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .reviews {
+      margin-left: 0px;
+      flex-direction: column;
+    }
+    .block- {
+      width: 80%;
+      flex: 0 0 80%;
+      max-width: 80%;
+      margin-right: 10%;
+      margin-left: 10%;
+      margin-bottom: 60px;
+    }
+    .block- .content {
+      padding: 16px;
+      border-radius: 8px;
+    }
+    .section-title-home {
+      font-size: 24px;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .block- .content {
+      height: 240px;
+    }
+  }

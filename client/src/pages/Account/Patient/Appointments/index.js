@@ -107,17 +107,8 @@ const Index = () => {
                                 Pending
                               </button>
                             ) : (
-                              <button
-                                type="button"
-                                className="btn shadow-none"
-                                onClick={() =>
-                                  goChatPage(
-                                    appointment.doctor._id,
-                                    appointment._id
-                                  )
-                                }
-                              >
-                                go council
+                              <button type="button" className="btn shadow-none">
+                                Aprooved
                               </button>
                             )}
                           </td>

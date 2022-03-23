@@ -45,6 +45,9 @@ const Index = ({}) => {
       }
     }
   };
+  const name = localStorage.getItem("userName");
+  const email = localStorage.getItem("userEmail");
+  const image = localStorage.getItem("userImage");
 
   return (
     <div className="custom-navnar">
@@ -95,15 +98,32 @@ const Index = ({}) => {
                     </div>
                     <div className="d-block d-lg-none text-center">
                       <div className="img-box rounded-circle mt-5">
-                        <img
-                          src={Images.FakeUser}
-                          className="img-fluid"
-                          alt="fake-user"
-                        />
+                        {image ? (
+                          <img
+                            src={
+                              apiURL +
+                              image
+                                ?.substring(1, image.length - 1)
+                                .substring(21)
+                            }
+                            className="img-fluid"
+                            alt="..."
+                          />
+                        ) : (
+                          <img
+                            src={Images.FakeUser}
+                            className="img-fluid"
+                            alt="..."
+                          />
+                        )}
                         {/* )} */}
                       </div>
                       <div className="content mt-3 text-white">
-                        <p>Ronak Israni</p>
+                        <p>
+                          {name !== null
+                            ? name.substring(1, name.length - 1)
+                            : email}
+                        </p>
                       </div>
                     </div>
                     <ul>

@@ -1,44 +1,69 @@
 import React, { useState, useEffect } from "react";
-import "./style.scss";
-// import axios from "axios";
-// import { apiURL } from "../../utils/apiURL";
 import { Images } from "../../utils/Images";
-
+import { TEXT_CONSTANT } from "../../constants";
 import NavbarComponent from "../../components/User/Navbar/index";
 import SearchComponent from "../../components/User/Search/index";
 import DoctorsListComponet from "../../components/User/DoctorsList/index";
+import "./style.scss";
+import "./style.css";
 
 const Index = () => {
-  const [latitude, setLatitude] = useState();
-  const [longitude, setLongitude] = useState();
   const [doctor, setDoctor] = useState([]);
   const [isLoading, setLoading] = useState(false);
 
-  //fetch Doctors
-  // const fetchDoctors = async () => {
-  //   try {
-  //     const response = await axios.get(`${apiURL}/client/doctors`);
-  //     console.log(response);
-  //     setDoctor(response.data.doctor);
-  //     setLoading(false);
-  //   } catch (error) {
-  //     if (error) console.log(console.response);
-  //   }
-  // };
-
   useEffect(() => {
-    // const geo = navigator.geolocation;
-    // if (!geo) {
-    //   alert("Geoloacation is not supported");
-    //   return;
-    // }
-    // navigator.geolocation.getCurrentPosition(function (position) {
-    //   setLatitude(position.coords.latitude);
-    //   setLongitude(position.coords.longitude);
-    // });
-    console.log("Home");
     setLoading(true);
   }, []);
+
+  const publicOpinion = [
+    {
+      name: "Virgie Hatley",
+      opinion: TEXT_CONSTANT.PUBLIC_OPINION_1,
+      image: Images.Avatar1,
+      imageWebP: Images.Avatar1WebP,
+      color: "#56729C",
+      backgroundColor: "#9EAFC9 ",
+    },
+    {
+      name: "Joe Sanchez",
+      opinion: TEXT_CONSTANT.PUBLIC_OPINION_3,
+      image: Images.Avatar3,
+      imageWebP: Images.Avatar3WebP,
+      color: "#C05A6F",
+      backgroundColor: "#E89A7D",
+    },
+    {
+      name: "Lynlee Copenhaver",
+      opinion: TEXT_CONSTANT.PUBLIC_OPINION_2,
+      image: Images.Avatar2,
+      imageWebP: Images.Avatar2WebP,
+      color: "#926C0D",
+      backgroundColor: "#D9B355",
+    },
+  ];
+
+  const renderOpinionCards = () => {
+    const opinionsOutput = publicOpinion.map((item, index) => (
+      <div key={`${index} ${item.name}`} className="block- position-relative">
+        <div
+          className="avator-img position-absolute rounded-circle"
+          style={{ backgroundColor: item.backgroundColor }}
+        >
+          <picture>
+            <source type="image/webp" srcSet={item.imageWebP} />
+            <img src={item.image} className="img-fluid" alt="user avatar" />
+          </picture>
+        </div>
+        <div className="content pt-5">
+          <p className="section-para">{item.opinion}</p>
+
+          <h3 style={{ color: item.color }}>{item.name}</h3>
+        </div>
+      </div>
+    ));
+    return opinionsOutput;
+  };
+
   return (
     <>
       <div className="home">
@@ -71,6 +96,13 @@ const Index = () => {
 
         <div className="suggested-doctors">
           <DoctorsListComponet doctors={doctor} loading={isLoading} />
+        </div>
+
+        <div className="px-lg-5">
+          <h2 className="section-title-home text-center">
+            What people are saying about Doctor App
+          </h2>
+          <div className="reviews">{renderOpinionCards()}</div>
         </div>
       </div>
     </>

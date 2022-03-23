@@ -226,6 +226,14 @@ ul {
       background: #fec200;
     }
   }
+  img {
+    @media (max-width: 1024px) {
+      width: 98px;
+    }
+    @media (max-width: 767px) {
+      width: 58px;
+    }
+  }
 }
 
 .bars {

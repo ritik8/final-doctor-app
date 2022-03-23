@@ -32,6 +32,13 @@ const Index = ({ user }) => {
     }
   };
 
+  localStorage.setItem(
+    "userEmail",
+    JSON.stringify(user.email.substring(0, user.email.indexOf("@")))
+  );
+  localStorage.setItem("userName", JSON.stringify(user.name));
+  localStorage.setItem("userImage", JSON.stringify(user.image));
+
   return (
     <div className="patient-sidemenu">
       {/* Header */}

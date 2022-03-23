@@ -20,9 +20,12 @@ const Index = ({ setDoctor, setLoading }) => {
   });
 
   const options = [
-    { value: "Medecine", label: "Medecine" },
+    { value: "Medicine", label: "Medicine" },
     { value: "Psychologist", label: "Psychologist" },
     { value: "Cardiologist", label: "Cardiologist" },
+    { value: "Orthopedics", label: "Orthopedics" },
+    { value: "General Surgery", label: "General Surgery" },
+    { value: "Pediatrics", label: "Pediatrics" },
   ];
 
   //onchange Specialist select
@@ -37,17 +40,20 @@ const Index = ({ setDoctor, setLoading }) => {
     //     deases: data.deases,
     //     specialist: specialist
     // }
-     const fetchDoctors = async () => {
-    try {
-      const response = await axios.get(`${apiURL}/patient/doctorlist/${data.city}/${specialist}`,header);
-      console.log(response);
-      setDoctor(response.data);
-      setLoading(false);
-    } catch (error) {
-      if (error) console.log(console.response);
-    }
-  }
-  fetchDoctors();
+    const fetchDoctors = async () => {
+      try {
+        const response = await axios.get(
+          `${apiURL}/patient/doctorlist/${data.city}/${specialist}`,
+          header
+        );
+        console.log(response);
+        setDoctor(response.data);
+        setLoading(false);
+      } catch (error) {
+        if (error) console.log(console.response);
+      }
+    };
+    fetchDoctors();
     // history.push(
     //   `/search?city=${data.city}&specialist=${
     //     specialist || options[0].value

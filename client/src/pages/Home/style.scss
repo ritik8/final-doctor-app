@@ -1,11 +1,12 @@
 @import "../../App.scss";
 
 .home {
+  height: 1250px;
   @media (max-width: 1024px) {
     height: 1380px;
   }
   @media (max-width: 767px) {
-    height: 896px;
+    height: 1696px;
   }
   .header {
     .content {
