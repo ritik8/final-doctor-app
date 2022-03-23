@@ -5,6 +5,9 @@ const findNearestDoctors = async (req, res, next) => {
   try {
     const doctors = await Doctors.aggregate([
       {
+        $match:{
+          isApproved:"approved"
+        },
         $lookup: {
           from: "councils",
           localField: "_id",
