@@ -7,14 +7,15 @@ const findNearestDoctors = async (req, res, next) => {
       {
         $match:{
           isApproved:"approved"
-        },
+        } },
+        {
         $lookup: {
           from: "councils",
           localField: "_id",
           foreignField: "doctor",
           as: "councilHour",
-        },
-      },
+        }
+      }
     ]);
     console.log("res", doctors);
     const doc = [];
