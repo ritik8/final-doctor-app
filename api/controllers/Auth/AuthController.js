@@ -136,11 +136,14 @@ const Login = async (req, res, next) => {
                     const updateToken = await Patient.findOneAndUpdate({ _id: account._id },
                         { $set: { 'access_token': token, 'status': 'online' } },
                         { new: true }).exec()
-
+                    const patient_count=await Patient.count();
+                    const doctor_count=await Doctor.count();
                     if (updateToken) {
                         return res.status(200).json({
                             status: true,
-                            token
+                            token,
+                            patient_count,
+                            doctor_count
                         })
                     }
                     return res.status(404).json({

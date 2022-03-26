@@ -1,4 +1,5 @@
 const Patient = require('../../../models/Patient')
+const Doctor = require('../../../models/Doctor')
 const jwt = require('jsonwebtoken')
 const Upload = require('../../services/FileUpload')
 const Unlink = require('../../services/FileDelete')
@@ -44,6 +45,16 @@ const Me = async (req, res, next) => {
     }
 }
 
+const Count = async (req, res, next) => {
+    const patient_count=await Patient.count();
+    const doctor_count=await Doctor.count();
+    console.log()
+    return res.status(200).json({
+        patient_count:patient_count,
+        doctor_count:doctor_count
+    })
+
+}
 // Update Profile Photo
 const updatePhoto = async (req, res, next) => {
     try {
@@ -134,7 +145,9 @@ const updateBio = async (req, res, next) => {
 }
 
 module.exports = {
+    Count,
     Me,
     updatePhoto,
-    updateBio
+    updateBio,
+    
 }

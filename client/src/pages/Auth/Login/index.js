@@ -59,6 +59,7 @@ const Login = () => {
       const response = await axios.post(`${apiURL}/auth/login`, newData);
       console.log(response);
       if (response.status === 200) {
+        console.log(response);
         setLoading(false);
         localStorage.setItem("token", response.data.token);
         checkRole(response.data.token);

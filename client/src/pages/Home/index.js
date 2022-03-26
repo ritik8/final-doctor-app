@@ -2,19 +2,39 @@ import React, { useState, useEffect } from "react";
 import { Images } from "../../utils/Images";
 import { TEXT_CONSTANT } from "../../constants";
 import NavbarComponent from "../../components/User/Navbar/index";
+import FooterComponent from "../../components/User/Footer/index";
 import SearchComponent from "../../components/User/Search/index";
 import DoctorsListComponet from "../../components/User/DoctorsList/index";
+import { apiURL } from "../../utils/apiURL";
 import "./style.scss";
 import "./style.css";
+import axios from "axios";
 
 const Index = () => {
   const [doctor, setDoctor] = useState([]);
   const [isLoading, setLoading] = useState(false);
+  const [patient_count, setPatientCount]=useState();
+  const [doctor_count,setDoctorCount]=useState();
+  const [header] = useState({
+    headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+  });
 
   useEffect(() => {
-    setLoading(true);
-  }, []);
+    setLoading(false);
+    check_count();
 
+  }, []);
+const check_count=async ()=>{
+  const response=await axios.get(`${apiURL}/patient/count`,
+    header
+
+  );
+  if (response.status === 200) {
+    console.log(response);
+    setPatientCount(response.data.patient_count);
+    setDoctorCount(response.data.doctor_count);
+  }
+}
   const publicOpinion = [
     {
       name: "Virgie Hatley",
@@ -104,6 +124,7 @@ const Index = () => {
           </h2>
           <div className="reviews">{renderOpinionCards()}</div>
         </div>
+        <FooterComponent patient_count={patient_count} doctor_count={doctor_count}/>
       </div>
     </>
   );

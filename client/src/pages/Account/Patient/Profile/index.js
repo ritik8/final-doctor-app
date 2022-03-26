@@ -125,7 +125,12 @@ const Index = ({ user }) => {
                           type="text"
                           name="name"
                           defaultValue={user ? user.name : null}
-                          {...register("name", { required: "Name is required" })}
+                          {...register("name", { required: "Name is required",
+                          pattern: {
+                            value: /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/g,
+                            message: "Invalid Name",
+                          },
+                         })}
                           className="form-control shadow-none"
                           placeholder="Name"
                         />
@@ -161,7 +166,11 @@ const Index = ({ user }) => {
                           type="number"
                           name="age"
                           defaultValue={user ? user.age : null}
-                          {...register("age", { required: "Age is required" })}
+                          {...register("age", { required: "Age is required",
+                          pattern: {
+                            value: /^[0-9]*$/g,
+                            message: "Age isn't valid.",
+                          }, })}
                           className="form-control shadow-none"
                         />
                       </div>
@@ -182,7 +191,11 @@ const Index = ({ user }) => {
                           type="text"
                           name="height"
                           defaultValue={user ? user.height : null}
-                          {...register("height", { required: "Height is required" })}
+                          {...register("height", { required: "Height is required",
+                          pattern: {
+                            value: /^[0-9]*$/g,
+                            message: "Height isn't valid.",
+                          }, })}
                           className="form-control shadow-none"
                         />
                       </div>
@@ -203,7 +216,11 @@ const Index = ({ user }) => {
                           type="number"
                           name="weight"
                           defaultValue={user ? user.weight : null}
-                          {...register("weight", { required: "Weight is required" })}
+                          {...register("weight", { required: "Weight is required",
+                          pattern: {
+                            value: /^[0-9]*$/g,
+                            message: "Weight isn't valid.",
+                          }, })}
                           className="form-control shadow-none"
                           placeholder="Weight (Kg)"
                         />
@@ -227,7 +244,11 @@ const Index = ({ user }) => {
                           type="text"
                           name="bloodPressure"
                           defaultValue={user ? user.bloodPressure : null}
-                          {...register("bloodPressure", { required: "Blood pressure is required" })}
+                          {...register("bloodPressure", { required: "Blood pressure is required",
+                          pattern: {
+                            value: /^\d{1,3}\/\d{1,3}$/g,
+                            message: "Blood Presure isn't valid.",
+                          }, })}
                           className="form-control shadow-none"
                         />
                       </div>

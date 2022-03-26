@@ -107,7 +107,12 @@ const GetAppointment = ({ hidemodal, doctor }) => {
                         type="text"
                         name="name"
                         defaultValue={patient ? patient.name : null}
-                        {...register("name", { required: "Name is required" })}
+                        {...register("name", { required: "Name is required" ,
+                        pattern: {
+                          value: /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/g,
+                          message: "Invalid Name",
+                        },
+                      })}
                         className="form-control shadow-none"
                         placeholder="Enter your name"
                       />
@@ -132,12 +137,12 @@ const GetAppointment = ({ hidemodal, doctor }) => {
                         {...register("phone", {
                           required: "Phone number is required",
                           pattern: {
-                            value: /^[6-9]\d{9}$/gi,
+                            value: /^[6-9]\d{9}$/g,
                             message: "Number isn't valid.",
                           },
                         })}
                         className="form-control shadow-none"
-                        placeholder="01xxxxxxxxx"
+                        placeholder="98xxxxxxxxx"
                       />
                     </div>
                   </div>
@@ -157,7 +162,11 @@ const GetAppointment = ({ hidemodal, doctor }) => {
                         type="number"
                         name="age"
                         defaultValue={patient ? patient.age : null}
-                        {...register("age", { required: "Age is required" })}
+                        {...register("age", { required: "Age is required",
+                        pattern: {
+                          value: /^[0-9]*$/g,
+                          message: "Age isn't valid.",
+                        }, })}
                         className="form-control shadow-none"
                         placeholder="Enter age"
                       />
@@ -181,6 +190,10 @@ const GetAppointment = ({ hidemodal, doctor }) => {
                         defaultValue={patient ? patient.weight : null}
                         {...register("weight", {
                           required: "Weight is required",
+                          pattern: {
+                            value: /^[0-9]*$/g,
+                            message: "Weight isn't valid.",
+                          },
                         })}
                         className="form-control shadow-none"
                         placeholder="Enter weight (50, 75 KG)"
@@ -205,6 +218,10 @@ const GetAppointment = ({ hidemodal, doctor }) => {
                         defaultValue={patient ? patient.height : null}
                         {...register("height", {
                           required: "Height is required",
+                          pattern: {
+                            value: /^[0-9]*$/g,
+                            message: "Height isn't valid.",
+                          },
                         })}
                         className="form-control shadow-none"
                         placeholder="Enter height (5, 6 feet)"
@@ -229,6 +246,10 @@ const GetAppointment = ({ hidemodal, doctor }) => {
                         defaultValue={patient ? patient.bloodPressure : null}
                         {...register("bloodPressure", {
                           required: "Blood pressure is required",
+                          pattern: {
+                            value: /^\d{1,3}\/\d{1,3}$/g,
+                            message: "Blood Presure isn't valid.",
+                          },
                         })}
                         className="form-control shadow-none"
                         placeholder="Enter BP (110/60, 125/80)"

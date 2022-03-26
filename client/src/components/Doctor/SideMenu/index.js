@@ -9,6 +9,7 @@ import { Images } from "../../../utils/Images";
 import { ic_edit } from "react-icons-kit/md";
 
 const Index = ({ doctor, editdialog }) => {
+  console.log(doctor);
   const history = useHistory();
   const [isLoading, setLoading] = useState(false);
   const [header] = useState({
@@ -51,15 +52,6 @@ const Index = ({ doctor, editdialog }) => {
             <small className="text-capitalize text-white">
               {doctor.specialist ?? null}
             </small>
-          </div>
-          <div className="ml-auto">
-            <button
-              type="button"
-              className="btn btn-light rounded-circle shadow-none"
-              onClick={() => editdialog(true)}
-            >
-              <Icon icon={ic_edit} size={20} />
-            </button>
           </div>
         </div>
       </div>

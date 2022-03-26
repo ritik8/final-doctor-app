@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import "./style.scss";
 import DoctorShowComponent from "../Model/DoctorShow/index";
 
-const Index = ({ doctors }) => {
+const Index = ({ doctors,loading }) => {
   const url = " https://doctor-patient-webapp.herokuapp.com/uploads/doctor/profiles/";
   const [show, setShow] = useState(false);
   const [doctor, setDoctor] = useState();
+  const [load ,setLoad]= useState(false);
 
   const closeShow = () => setShow(false);
 
@@ -14,7 +15,7 @@ const Index = ({ doctors }) => {
     setShow(true);
     setDoctor(data);
   };
-
+console.log(loading);
   return (
     <div className="doctors-list-component">
       {!doctors && (
@@ -28,8 +29,7 @@ const Index = ({ doctors }) => {
       )}
       <div className="container">
         <div className="row px-2 px-sm-0">
-          {doctors &&
-            doctors.map((doctor, i) => (
+          {loading ? <div class='spinner-border spin' role='status' style={{marginLeft:"50%"}}><span class='visually-hidden'>Loading...</span></div> : doctors && doctors.map((doctor, i) => (
               <div
                 className="doctor-card-container col-6 col-md-4 col-lg-3 p-2"
                 key={i}

@@ -40,7 +40,9 @@ const Index = ({ setDoctor, setLoading }) => {
     //     deases: data.deases,
     //     specialist: specialist
     // }
+    
     const fetchDoctors = async () => {
+      setLoading(true);
       try {
         const response = await axios.get(
           `${apiURL}/patient/doctorlist/${data.city}/${specialist}`,

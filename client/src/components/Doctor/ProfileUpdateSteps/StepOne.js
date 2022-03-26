@@ -22,6 +22,7 @@ const StepOne = ({ responsestep, id }) => {
     if (file) {
       setPreviewURL(URL.createObjectURL(event.target.files[0]));
       setSelectedFile(file);
+      console.log(file);
     }
   };
 

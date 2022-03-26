@@ -1,4 +1,6 @@
 const Doctor = require('../../../models/Doctor')
+const Patient = require('../../../models/Patient')
+const Appointment=require('../../../models/Appointment')
 const Council = require('../../../models/Council')
 const jwt = require('jsonwebtoken')
 const Upload = require('../../services/FileUpload')
@@ -42,7 +44,33 @@ const Me = async (req, res, next) => {
         if (error) next(error)
     }
 }
+const Count = async (req, res, next) => {
+    // const patient_count=await Patient.count();
+    // const doctor_count=await Doctor.count();
+    // console.log()
+    const { id } = req.params;
+    const ans = await Appointment.find({ doctor: id }).exec();
 
+    if (!ans) {
+        return res.status(200).json({
+            status: false,
+            message: 'Doctor not found'
+        })
+    }
+    var  pending_count=0,app_count=0;
+    ans.map((doc)=>{
+        if(doc.status=='pending'){
+            pending_count++;
+        }
+        app_count++;
+
+    })
+    return res.status(200).json({
+        pending_count:pending_count,
+        app_count:app_count
+    })
+
+}
 
 // Update Profile
 const updateProfile = async (req, res, next) => {
@@ -77,12 +105,15 @@ const updateProfile = async (req, res, next) => {
             })
         }
 
+
         // Update doctor name & image
         if (req.files) {
             // Remove Old file
+            console.log(req.files);
             if (doctor.image) {
                 await Unlink.fileDelete('./uploads/doctor/profiles/', doctor.image)
             }
+            console.log(req.files);
 
             filename = Upload.fileUpload(req.files.image, './uploads/doctor/profiles/')
 
@@ -214,5 +245,6 @@ const updateProfile = async (req, res, next) => {
 
 module.exports = {
     Me,
-    updateProfile
+    updateProfile,
+    Count
 }

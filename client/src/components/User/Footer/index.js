@@ -5,11 +5,15 @@ import { Icon } from "react-icons-kit";
 import { facebook, linkedin2, twitter } from "react-icons-kit/icomoon";
 import { Images } from "../../../utils/Images";
 
-const Index = () => {
+const Index = ({patient_count,doctor_count}) => {
   return (
     <div className="footer">
       <div className="container">
         <div className="row">
+        <div className="col-12 col-lg-4 mb-4 mb-lg-0 text-center text-lg-right">
+          <h4>{patient_count}+ Patient Register</h4>
+          <h4>{doctor_count}+ Doctor Available</h4>
+          </div>
           <div className="col-12 col-lg-4 mb-4 mb-lg-0 pr-lg-4">
             <div className="text-center text-lg-left">
               <Link to="/">
@@ -26,26 +30,7 @@ const Index = () => {
             <Link to="/">privacy & policy</Link>
             <Link to="/">terms & conditions</Link>
           </div>
-          <div className="col-12 col-lg-4 mb-4 mb-lg-0 text-center text-lg-left">
-            <h5>Contacts</h5>
-            <ul>
-              <li>
-                <a href="https://www.facebook.com/mamun.swe.277">
-                  <Icon icon={facebook} size={18} />
-                </a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/in/mamun-swe">
-                  <Icon icon={linkedin2} size={18} />
-                </a>
-              </li>
-              <li>
-                <a href="https://twitter.com">
-                  <Icon icon={twitter} size={18} />
-                </a>
-              </li>
-            </ul>
-          </div>
+     
         </div>
       </div>
     </div>

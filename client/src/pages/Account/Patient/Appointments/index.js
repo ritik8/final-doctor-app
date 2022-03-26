@@ -22,6 +22,7 @@ const Index = () => {
           header
         );
         if (response.status === 200) {
+          console.log("ritik",response);
           setAppointments(response.data.appointments);
           setLoading(false);
         }

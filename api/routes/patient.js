@@ -6,9 +6,11 @@ const AppointmentController = require('../controllers/Patient/AppointmentControl
 const findNearest=require('../controllers/Patient/SearchDoctor')
 
 router.get('/me', Authenticate.isPatient, ProfileController.Me)
+router.get('/count',Authenticate.isPatient, ProfileController.Count)
 router.get('/doctorlist/:city/:special', Authenticate.isPatient, findNearest.findNearestDoctors)
 router.post('/profile/:id/update/photo', Authenticate.isPatient, ProfileController.updatePhoto)
 router.post('/profile/:id/update/bio', Authenticate.isPatient, ProfileController.updateBio)
+
 
 router.get('/appointment/request/:id/index', Authenticate.isPatient, AppointmentController.GetAppointmentRequests)
 router.post('/appointment/request', Authenticate.isPatient, AppointmentController.SetAppointmentRequest)

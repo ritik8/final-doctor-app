@@ -84,7 +84,7 @@ const Index = ({ show, doctor }) => {
               {doctor.name ? doctor.name : "N/A"}
             </h5>
             <p className="text-capitalize mb-2 mt-2">
-              {doctor.specialist ? doctor.specialist + `Specialist` : "N/A"}
+              {doctor.specialist ? doctor.specialist + ` Specialist` : "N/A"}
             </p>
             <p className="text-capitalize">
               {doctor.college ? doctor.college : "N/A"}

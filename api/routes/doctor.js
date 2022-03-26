@@ -6,6 +6,7 @@ const AppointmentController = require('../controllers/Doctor/AppointmentControll
 
 router.get('/me', ProfileController.Me)
 router.post('/profile/:id/update', AuthController.isDoctor, ProfileController.updateProfile)
+router.get('/count/:id',AuthController.isDoctor,ProfileController.Count)
 
 router.get('/appointment/:id/requests', AuthController.isDoctor, AppointmentController.AppointmentRequests)
 router.get('/appointment/:id/approved', AuthController.isDoctor, AppointmentController.ApprovedAppointments)
